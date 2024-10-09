@@ -1,0 +1,25 @@
+<header class="bg-secondary p-2 text-white mb-2">
+    <h4 >TAB TASK USING FOR</h4>
+</header>
+<ul class="nav nav-pills">
+    <li class="nav-item"
+    (click)="onTabClick(tab.frameworkname)"
+    *ngFor="let tab of tabarr">
+       <a href="javascript:;" 
+       [ngClass]="{
+          'active':selectedframework.toLowerCase().includes(tab.frameworkname)
+       }"
+       class="nav-link">
+        {{tab.tabtitle}}
+       </a>
+    </li>
+</ul>
+
+<div class="card mt-3">
+ <ng-container *ngFor="let tab of tabarr">
+   <div class="card-body"
+    *ngIf="selectedframework.toLowerCase().includes(tab.frameworkname)"
+    [innerHTML]="tab.tabcontent">
+   </div>
+</ng-container>
+</div>

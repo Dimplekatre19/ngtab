@@ -1,0 +1,46 @@
+<header class="bg-secondary p-2 text-white mb-2">
+    <h5 >TAB TASK USING NGSWITCH</h5>
+</header>
+<ul class="nav nav-pills">
+   <li class="nav-item"
+   (click)="selectedframework='angular'">
+      <a href="javascript:;" 
+      [ngClass]="{
+          'active':selectedframework.toLowerCase().includes('angular')
+      }"
+      class="nav-link">Angular</a>
+   </li>
+   <li class="nav-item"
+   (click)="selectedframework='react'">
+      <a href="javascript:;" 
+
+      [ngClass]="{
+          'active':selectedframework.toLowerCase().includes('react')
+      }"
+      class="nav-link">React</a>
+   </li>
+   <li class="nav-item"
+   (click)="selectedframework='vue'">
+      <a href="javascript:;" 
+      [ngClass]="{
+        'active':selectedframework.toLowerCase().includes('vue')
+      }"
+      class="nav-link">Vue</a>
+   </li>
+</ul>
+ <hr>
+ 
+<div [ngSwitch]="selectedframework">
+    <p class="alert alert-info"
+     *ngSwitchCase="'angular'">
+        <strong>Angular</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, illo expedita impedit enim, officiis obcaecati necessitatibus tempore culpa, magnam consectetur explicabo dolorum quibusdam blanditiis omnis.
+    </p>
+    <p class="alert alert-info"
+    *ngSwitchCase="'react'">
+        <strong>React</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, illo expedita impedit enim, officiis obcaecati necessitatibus tempore culpa, magnam consectetur explicabo dolorum quibusdam blanditiis omnis.
+    </p>
+    <p class="alert alert-info"
+    *ngSwitchCase="'vue'">
+        <strong>Vue</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, illo expedita impedit enim, officiis obcaecati necessitatibus tempore culpa, magnam consectetur explicabo dolorum quibusdam blanditiis omnis.
+    </p>
+</div>
